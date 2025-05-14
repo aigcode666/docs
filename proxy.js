@@ -303,7 +303,7 @@ class MDX_CLASS {
                 if (bestMatch) break; // 找到匹配后停止搜索当前组件
             }
             console.log(bestMatch,'-bestMatch')
-            if (bestMatch&&results.every(v=>v.description!==bestMatch)) {
+            if(bestMatch&&results.every(v=>v.description!==bestMatch)&&results.every(v=>JSON.stringify(v.breadcrumbs)!==JSON.stringify(component.breadcrumbs))) {
                 results.push({
                     page: component.page,
                     title: component.title,
