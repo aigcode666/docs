@@ -263,7 +263,7 @@ function generateUUID() {
 
 class MDX_CLASS {
     constructor() {
-        this.search = throttle(this._searchCore.bind(this), 500)
+        this.search = throttle(this._searchCore.bind(this), 300)
 
     }
     _searchCore(query) {
@@ -278,7 +278,7 @@ class MDX_CLASS {
         if (!normalizedQuery) return results;
 
         for (const component of MDX_COMPONENTS) {
-            const content = component.description || component.content || [];
+            const content = [...(component?.description??[]),...(component?.content??[]),component.title]|| [];
             let bestMatch = null;
 
             // 优先搜索description字段，不存在时搜索content
@@ -302,8 +302,8 @@ class MDX_CLASS {
 
                 if (bestMatch) break; // 找到匹配后停止搜索当前组件
             }
-
-            if (bestMatch) {
+            console.log(bestMatch,'-bestMatch')
+            if (bestMatch&&results.every(v=>v.description!==bestMatch)) {
                 results.push({
                     page: component.page,
                     title: component.title,
