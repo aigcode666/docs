@@ -210,36 +210,12 @@ class SearchCache {
 }
 const searchCache = new SearchCache();
 function throttle(func, delay = 500) {
-    let timeoutId;
     let lastExec = 0;
-    let abortController = null; // 新增：AbortController 实例
-
     return function (...args) {
         const now = Date.now();
-        const elapsed = now - lastExec;
-
-        // 取消未完成的请求
-        if (abortController) {
-            abortController.abort();
-            abortController = null;
-        }
-
-        // 创建新的 AbortController
-        abortController = new AbortController();
-        args.push(abortController.signal); // 将 signal 加入参数
-
-        const execute = () => {
-            lastExec = Date.now();
-            func.apply(this, args);
-            abortController = null;
-        };
-
-        clearTimeout(timeoutId);
-        if (elapsed > delay) {
-            execute();
-        } else {
-            timeoutId = setTimeout(execute, delay - elapsed);
-        }
+        if (now - lastExec < delay) return;
+        lastExec = now;
+        return func.apply(this, args);
     };
 }
 function generateSecure99DigitNumber(index) {
@@ -287,11 +263,10 @@ function generateUUID() {
 
 class MDX_CLASS {
     constructor() {
-        this.search = throttle(this._searchCore.bind(this), 200)
+        this.search = throttle(this._searchCore.bind(this), 50)
 
     }
-    async _searchCore(query, signal) {
-        if (signal.aborted) return;
+    _searchCore(query) {
         // 1. 缓存检查
         const cacheKey = `search_${query}`;
         const cached = searchCache.get(cacheKey);
@@ -303,7 +278,7 @@ class MDX_CLASS {
         if (!normalizedQuery) return results;
 
         for (const component of MDX_COMPONENTS) {
-            const content = [...(component?.description ?? []), ...(component?.content ?? []), component.title] || [];
+            const content = [...(component?.description??[]),...(component?.content??[]),component.title]|| [];
             let bestMatch = null;
 
             // 优先搜索description字段，不存在时搜索content
@@ -327,8 +302,8 @@ class MDX_CLASS {
 
                 if (bestMatch) break; // 找到匹配后停止搜索当前组件
             }
-            console.log(bestMatch, '-bestMatch')
-            if (bestMatch && results.every(v => v.description !== bestMatch) && results.every(v => JSON.stringify(v.breadcrumbs) !== JSON.stringify(component.breadcrumbs))) {
+            console.log(bestMatch,'-bestMatch')
+            if(bestMatch&&results.every(v=>v.description!==bestMatch)&&results.every(v=>JSON.stringify(v.breadcrumbs)!==JSON.stringify(component.breadcrumbs))) {
                 results.push({
                     page: component.page,
                     title: component.title,
@@ -337,7 +312,6 @@ class MDX_CLASS {
                 });
             }
         }
-        if (signal.aborted) return;
 
         // 3. 缓存结果
         searchCache.set(cacheKey, results);
@@ -419,23 +393,10 @@ const INTERCEPT_URL = "https://api.mintlifytrieve.com/api/chunk/autocomplete";
         // if (url !== INTERCEPT_URL) return originalFetch(url, init);
 
         if (typeof url === 'string' && url === INTERCEPT_URL) {
-            const controller = new AbortController();
-
-            const newInit = {
-                ...init,
-                signal: controller.signal
-            };
-            // 取消前一个同类请求
-            if (window.lastSearchRequest) {
-                window.lastSearchRequest.abort();
-            }
-            window.lastSearchRequest = controller;
-
             try {
-
-                const response = await originalFetch(url, newInit);
+                const response = await originalFetch(url, init);
                 const clone = response.clone();
-                const body = newInit?.body ? JSON.parse(newInit.body) : {};
+                const body = init?.body ? JSON.parse(init.body) : {};
                 const query = body.query || '';
 
                 // 处理数据逻辑
@@ -451,10 +412,10 @@ const INTERCEPT_URL = "https://api.mintlifytrieve.com/api/chunk/autocomplete";
                 });
             } catch (e) {
                 console.warn('Fetch处理失败:', e);
-                return originalFetch(url, newInit);
+                return originalFetch(url, init);
             }
         }
-        return originalFetch(url, newInit);
+        return originalFetch(url, init);
 
 
 
