@@ -376,7 +376,7 @@ function processResults(results) {
                 time_stamp: null,
                 tracking_id:
                     null,
-                updated_at: `2025-04-07T08:06:23.${generateSecure99DigitNumber(6)}`, weight: 0,
+                updated_at: `${new Date()}.${generateSecure99DigitNumber(6)}`, weight: 0,
             }]
         }))
     }
