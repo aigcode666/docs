@@ -365,22 +365,30 @@ function processResults(results) {
                 :
                 Number(`0.${generateSecure99DigitNumber(16)}`),
             highlights: [v.description],
-            metadata: [{
-                "link": v.page.slice(1),
-                id: generateUUID(),
-                chunk_html: `${v.title}\n${v.description}`,
-                dataset_id: "592bca4c-7f00-4cc2-93c5-62339712a05f",
-                metadata: {
-                    breadcrumbs: v.breadcrumbs,
-                    title: v.title
-                },
-                num_value: null,
-                tag_set: "LANGUAGE:*,USERAUTH:*,H2,VERSION:*",
-                time_stamp: null,
-                tracking_id:
-                    null,
-                updated_at: `${newDate}.${generateSecure99DigitNumber(6)}`, weight: 0,
-            }]
+            metadata: [
+    {
+        "id": "51a698d4-99f4-4a22-b912-e7d5e17216f6",
+        "link": "home",
+        "created_at": "2025-05-14T10:12:26.960492",
+        "updated_at": "2025-05-14T10:12:26.960492",
+        "chunk_html": "👋 Welcome\n[object Object]",
+        "metadata": {
+            "breadcrumbs": [
+                "Get Started",
+                "👋 Welcome"
+            ],
+            "title": "👋 Welcome"
+        },
+        "tracking_id": null,
+        "time_stamp": null,
+        "dataset_id": "9b097ad1-f67d-4005-8193-e0381347c9b4",
+        "weight": 0,
+        "location": null,
+        "image_urls": null,
+        "tag_set": "LANGUAGE:*,VERSION:*,USERAUTH:*",
+        "num_value": null
+    }
+]
         }))
     }
 }
