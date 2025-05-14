@@ -352,6 +352,9 @@ class MDX_CLASS {
 }
 
 function processResults(results) {
+    const randomHours = Math.floor(Math.random() * 10) + 1;
+    const newDate = new Date();
+    newDate.setHours(newDate.getHours() - randomHours);
 
     return {
         corrected_query: null,
@@ -376,7 +379,7 @@ function processResults(results) {
                 time_stamp: null,
                 tracking_id:
                     null,
-                updated_at: `${new Date()}.${generateSecure99DigitNumber(6)}`, weight: 0,
+                updated_at: `${newDate}.${generateSecure99DigitNumber(6)}`, weight: 0,
             }]
         }))
     }
