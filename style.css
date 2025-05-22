@@ -57,3 +57,11 @@ html[lg:[--scroll-mt:9.5rem]]{
   }
 }
 }
+table{
+      display: table!important;
+}
+ th,
+    td {
+        text-align: left!important;
+        padding-inline-end: .5714286em!important;
+    }
