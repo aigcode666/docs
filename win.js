@@ -9,7 +9,7 @@ const STRONG_TAG_REGEX = /<strong>(.*?)<\/strong>/gi;
 
 const FOOTER_ICON_REPLACEMENT = {
   targetUrl: 'https://mintlify.b-cdn.net/v6.6.0/brands/discord.svg',
-  newUrl: 'https://www.autocoder.cc/img/autopilot/docsFooterIcon1.svg',
+  newUrl: 'https://koudingvip.com/img/autopilot/docsFooterIcon1.svg',
   styleRegex: /url\(["']?https:\/\/mintlify\.b-cdn\.net\/v6\.6\.0\/brands\/discord\.svg["']?\)/gi
 };
 
