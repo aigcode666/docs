@@ -65,3 +65,6 @@ table{
         text-align: left!important;
         padding-inline-end: .5714286em!important;
     }
+td{
+  padding-top:12px!important;
+}
