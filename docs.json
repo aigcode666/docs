@@ -30,6 +30,23 @@
         "pages": [
           "untitled-page"
         ]
+      },
+      {
+        "tab": "Resources",
+        "menu": [
+          {
+            "item": "Blog",
+            "pages": [
+              "blog/latest",
+              "blog/announcements",
+              "blog/inside-autocoder",
+              "blog/development-101",
+              "blog/reports",
+              "blog/tutorials",
+              "blog/stories"
+            ]
+          }
+        ]
       }
     ]
   },
