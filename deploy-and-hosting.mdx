@@ -10,7 +10,7 @@ icon: "cloud-arrow-up"
 
 ## Project launch
 
-Launch your project externally, including web deployment and domain configuration.
+Launch your project externally, including webside  and domain configuration.
 
 ### Web deployment
 
@@ -19,10 +19,10 @@ Launch your project externally, including web deployment and domain configuratio
     Click **Publish** in the top right corner of the editor.
   </Step>
   <Step title="Select the Web tab">
-    Select the **Web** tab in the pop-up window.
+    Select the **Website** tab in the pop-up window.
   </Step>
   <Step title="Configure your domain">
-    Configure your domain (**Subdomain** or **Custom Domain**). Optionally, toggle **Share to SparkVibe** to share your project with the community.
+    Choose to configure a **Subdomain**, **Purchase a Domain**, or bind a **Custom Domain**. Optionally, toggle **Share to SparkVibe** to share your project with the community.
   </Step>
   <Step title="Confirm publication">
     Click **Publish** to confirm your deployment.
@@ -33,18 +33,48 @@ Launch your project externally, including web deployment and domain configuratio
   ![Image](/images/image-74.png)
 </Frame>
 
-After deployment, the system generates two links: the frontend display link and the **Admin Dashboard** link for managing full-stack data.
+After deployment, the system generates two links: the frontend display link (**Website URL**) and the **Backend URL** for managing full-stack data.
 
-### Subdomain
+---
 
-All users (including Free plan users) receive an `*.autocoder.cc` **Subdomain**. Enter your desired prefix in the **Subdomain** configuration tab to automatically assign it.
+## Domain options
+
+### Platform Subdomain
+
+All users (including Free plan users) receive a free `*.autocoder.cc` **Subdomain**.
+
+- Enter your desired prefix in the **Subdomain** configuration tab to automatically assign it.
+- _Note: Each project can only have one platform subdomain._
 
 ### Purchase a Domain
+
+Want a professional domain without the hassle of manual configuration? You can buy domains directly inside AutoCoder.cc.
+
+<Note>
+  This feature is available for **Standard** and **Pro** plans.
+</Note>
+
+<Steps>
+  <Step title="Search for a domain">
+    In the **Purchase a Domain** tab, type your desired domain name to check availability.
+  </Step>
+  <Step title="Review pricing and checkout">
+    Review the domain price plus a **\$9.99/year platform service fee**. Complete your payment securely via Stripe.
+  </Step>
+  <Step title="Automatic setup">
+    Once paid, the platform will automatically configure the DNS and apply a free auto-renewing SSL certificate for you. No manual setup is required.
+  </Step>
+</Steps>
+
+<Warning>
+  - **No Refunds:** Domains are registered instantly and cannot be changed or refunded once paid. Please double-check your spelling!
+  - **Auto-Renewal:** Active by default to prevent expiration or loss of your website. You can manage this anytime in your Workspace.
+</Warning>
 
 ### Custom Domain
 
 <Note>
-  This feature is exclusive to paid plans (the **Standard** plan supports 1 domain, and the **Pro** plan supports unlimited domains).
+  This feature is exclusive to paid plans (the **Standard** plan supports binding 1 domain, and the **Pro** plan supports unlimited domains).
 </Note>
 
 <Steps>
@@ -52,12 +82,24 @@ All users (including Free plan users) receive an `*.autocoder.cc` **Subdomain**.
     In the **Custom Domain** tab of the **Publish** pop-up, enter your third-party domain.
   </Step>
   <Step title="Configure and verify DNS records">
-    Log in to your domain provider (e.g., GoDaddy) and add the provided CNAME record to your DNS configuration. Once added, return to AutoCoder.cc and click **Verify** to check the resolution status.
+    Log in to your domain provider (e.g., GoDaddy) and add the provided CNAME record to your DNS configuration.
+
+    _Tip: Please make sure to remove all A and AAAA records currently present before adding new ones. DNS changes may take up to 48 hours to reflect._
+
+    Once added, return to AutoCoder.cc and click **Verify** to check the resolution status.
   </Step>
   <Step title="Secure your domain with an SSL certificate">
     To enable HTTPS, you can either paste your certificate content (`CRT` and `KEY`) directly into the text fields, or click **Upload file** to upload your `.key` and `.crt`/`.cer` files.
   </Step>
 </Steps>
+
+### Primary Domain Settings
+
+<Note>
+  This feature is exclusive to the **Pro** plan.
+</Note>
+
+If you bind multiple domains (e.g., a platform subdomain and a custom domain) to a single project, you can designate one as the **Primary Domain** in the Publish Project settings by clicking the ⭐ (Star) icon. All other alias domains will automatically and securely redirect to your Primary Domain.
 
 ---
 
@@ -66,18 +108,18 @@ All users (including Free plan users) receive an `*.autocoder.cc` **Subdomain**.
 Complete app packaging and test distribution.
 
 <Note>
-  The **App** tab is only displayed when your project includes a mobile application.
+  The **Mobile App** tab is only displayed when your project includes a mobile application.
 </Note>
+
+### Test package download (Android / iOS)
+
+If you generated a mobile app, switch to the **Mobile App** tab after clicking **Publish**.
+
+_Currently, AutoCoder.cc only supports generating and downloading Android APK test packages for installation testing. iOS test packages (.ipa files) and TestFlight distribution are not supported at this time._
 
 ### App store launch
 
 _Currently, the platform does not support directly publishing the generated app to Google Play or the Apple App Store. You must handle compliance and the submission process manually._
-
-### Test package download (Android / iOS)
-
-If you generated a mobile app, switch to the **App** tab after clicking **Publish**.
-
-_Currently, AutoCoder.cc only supports generating and downloading Android APK test packages for installation testing. iOS test packages (.ipa files) and TestFlight distribution are not supported at this time._
 
 ---
 
@@ -91,5 +133,5 @@ Get full control of the project.
 
 ### Source code export
 
-- **Source Code Export** is a core feature of the paid plans (**Standard** and **Pro**). The Free plan does not support this operation.
+- **Source Code Export** is an exclusive feature of the paid plans. The Free plan does not support this operation.
 - Package and download the complete production-grade code generated by AutoCoder.cc (including frontend UI, backend logic, and database schema) to your local machine. Deploy it to your own cloud server or a third-party hosting platform to achieve 100% ownership of your digital assets.
