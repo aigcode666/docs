@@ -67,8 +67,8 @@
 	"seo": {
 		"metatags": {
 			"og:site_name": "AutoCoder",
-			"og:url": "https://www.autocoder.cc/",
-			"canonical": "https://www.autocoder.cc/"
+			"og:url": "https://www.autocoder.cc",
+			"canonical": "https://www.autocoder.cc"
 		}
 	},
 	"footer": {
