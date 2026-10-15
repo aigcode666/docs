@@ -33,7 +33,8 @@
 		  "api-hub",
           "earn-credits",
           "profile",
-          "security-and-privacy"
+          "security-and-privacy",
+          ""
         ]
       },
       {
@@ -53,12 +54,7 @@
         ]
       },
       {
-        "tab": "Doc",
-        "pages": [
-          "connect-your-app-to-google-maps-platform",
-          "untitled-page",
-          "untitled-page-2"
-        ]
+        "tab": "Doc"
       }
     ]
   },
