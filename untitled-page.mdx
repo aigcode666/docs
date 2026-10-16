@@ -140,14 +140,36 @@ To separate build-time operations from runtime AI calls, Autocoder uses two inde
   </tbody>
 </table>
 
-| **Credit Type** | **Purpose** | **How It Is Deducted** |
-| :-- | :-- | :-- |
-| Run Credits | All AI feature calls | Deducted per AI API call based on token usage |
-| Build Credits | Project build, edit, and other operations | The original credit system; default type |
-
 **The two types are counted independently: if build credits run out, you cannot use run credits to cover build operations — and vice versa.**
 
 ### **Run Credits Included in Plans**
+
+<table>
+  <colgroup>
+    <col width="285" />
+    <col width="288" />
+  </colgroup>
+  <thead>
+    <tr>
+      <th>**Plan**</th>
+      <th>**Run Credits**</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Starter</td>
+      <td>20 credits</td>
+    </tr>
+    <tr>
+      <td>Standard</td>
+      <td>50 credits</td>
+    </tr>
+    <tr>
+      <td>Pro</td>
+      <td>150 credits</td>
+    </tr>
+  </tbody>
+</table>
 
 | **Plan** | **Run Credits** |
 | :-- | :-- |
