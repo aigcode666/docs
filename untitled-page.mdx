@@ -4,7 +4,7 @@ title: "AI Features"
 
 Autocoder's built-in AI connector lets you add intelligent features to your app without building an AI backend, managing API keys, or wiring up model calls yourself. Just describe what you want in natural language, and Autocoder sets up the model, backend, and billing for you.  
 
-**Typical AI features you can add to your project include:   ** 
+**Typical AI features you can add to your project include:     ** 
 
 · Chatbots and in-app conversational assistants  
 
@@ -16,15 +16,15 @@ Autocoder's built-in AI connector lets you add intelligent features to your app 
 
 · Upload files or images and generate content from them  
 
-## **Enabling AI in Your Project   ** 
+## **Enabling AI in Your Project     ** 
 
 Enabling AI features takes just a few steps. You can enable and set it up through the API Hub or by sending a request in the chat flow.  
 
-### **Two Connection Modes   ** 
+### **Two Connection Modes     ** 
 
 Autocoder offers two ways to connect AI to your project:  
 
-#### **Managed by AutoCoder   ** 
+#### **Managed by AutoCoder     ** 
 
 · Default mode — Autocoder provides the model and API key; no application required  
 
@@ -105,7 +105,7 @@ When you mention AI in your generation request, the system automatically checks 
 
 ![Image](/images/image-89.png "Image")
 
-## **How It Works**
+## **How It Works ** 
 
 · Autocoder automatically generates and manages API credentials for your project — no manual key creation or maintenance.
 
@@ -115,7 +115,7 @@ When you mention AI in your generation request, the system automatically checks 
 
 · If your project is shared to Spark Vibe, AI calls are not executed for other visitors.
 
-## **Run Credits and Billing**
+## **Run Credits and Billing ** 
 
 To separate build-time operations from runtime AI calls, Autocoder uses two independent credit types that cannot be mixed:
 
@@ -127,9 +127,9 @@ To separate build-time operations from runtime AI calls, Autocoder uses two inde
   </colgroup>
   <thead>
     <tr>
-      <th>**Credit Type**</th>
-      <th>**Purpose**</th>
-      <th>**How It Is Deducted**</th>
+      <th>**Credit Type **</th>
+      <th>**Purpose **</th>
+      <th>**How It Is Deducted **</th>
     </tr>
   </thead>
   <tbody>
@@ -146,7 +146,7 @@ To separate build-time operations from runtime AI calls, Autocoder uses two inde
   </tbody>
 </table>
 
-### **Monthly Credit Limit**
+### **Monthly Credit Limit ** 
 
 You can set a monthly run credit limit for each project. The default is "No limit." Once enabled, enter a specific numeric value. When the limit is reached:
 
@@ -154,11 +154,11 @@ You can set a monthly run credit limit for each project. The default is "No limi
 
 · A notice such as "Current model unavailable" appears within the deployed project
 
-## **Monitoring AI Usage**
+## **Monitoring AI Usage ** 
 
 Autocoder provides a detailed AI analytics dashboard for each project. Access it from the project list, the sidebar recent projects, the homepage recent projects, or the analytics icon in the project editor.
 
-### **Key Metrics**
+### **Key Metrics ** 
 
 The Analytics page includes a dedicated AI tab. Filter by time range:
 
@@ -182,20 +182,20 @@ Each AI request record includes:
 
 · Input token count and output token count
 
-## **FAQ**
+## **FAQ ** 
 
-### **Q: Does AI support RAG or Agents?**
+### **Q: Does AI support RAG or Agents? ** 
 
 The current version does not support RAG (Retrieval-Augmented Generation) or Agent capabilities. AI calls connect only to your project's own database. If your request involves an unsupported capability, the AI will notify you and ask whether you want to continue with a text-based approach.
 
-### **Q: Does AI work in both Demo and published projects?**
+### **Q: Does AI work in both Demo and published projects? ** 
 
 Yes. AI features use real model calls in both the Demo preview and the published (Production) stage. However, if your project is shared to Spark Vibe, other visitors will not trigger real AI calls.
 
-### **Q: Can I keep using AI if I run out of build credits?**
+### **Q: Can I keep using AI if I run out of build credits? ** 
 
 Yes. AI calls consume run credits, which are completely separate from build credits. As long as you have remaining run credits, AI features continue to work.
 
-### **Q: Can I use my own model and API key?**
+### **Q: Can I use my own model and API key? ** 
 
 Yes. In the AI management page, select "Your own API Key" mode, enter your API Key and Base URL, then click fetch models to load and select from your available models.
