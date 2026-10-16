@@ -68,17 +68,32 @@ If you prefer to set up the connection mode and model first before adding AI fea
 
 When configuring AI conversation features in your project, you can choose how chat memory is stored:
 
-| **Storage Mode** | **Description** |  |
-| --- | --- | --- |
-| Database |  |  |
-| Local Browser |  |  |
-|  |  |  |
-
-| **Storage Mode** | **Description** |
-| :-- | :-- |
-| Database | Persistently saved; accessible across devices and browsers |
-| Local Browser | Stored only in the current browser |
-| No Save | Cleared on refresh; kept for the current session only |
+<table>
+  <colgroup>
+    <col width="152" />
+    <col width="472" />
+  </colgroup>
+  <thead>
+    <tr>
+      <th>**Storage Mode**</th>
+      <th>**Description**</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Database</td>
+      <td>Persistently saved; accessible across devices and browsers</td>
+    </tr>
+    <tr>
+      <td>Local Browser</td>
+      <td>Stored only in the current browser</td>
+    </tr>
+    <tr>
+      <td>No Save</td>
+      <td>Cleared on refresh; kept for the current session only</td>
+    </tr>
+  </tbody>
+</table>
 
 When you mention AI in your generation request, the system automatically checks for explicit AI features after the lightweight generation step and before the requirements list is generated, and prompts you to confirm the memory storage mode.
 
@@ -97,6 +112,8 @@ When you mention AI in your generation request, the system automatically checks 
 ## **Run Credits and Billing**
 
 To separate build-time operations from runtime AI calls, Autocoder uses two independent credit types that cannot be mixed:
+
+/
 
 | **Credit Type** | **Purpose** | **How It Is Deducted** |
 | :-- | :-- | :-- |
