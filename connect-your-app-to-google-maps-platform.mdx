@@ -12,12 +12,6 @@ Google Maps Platform APIs fall into two categories: those that run in the browse
 | --- | --- | --- |
 | Purpose | Frontend map rendering: display, markers, interactions, address autocomplete | Backend data calls: routing, geocoding, distance calculation, place search |
 | Exposure | Public — visible in frontend page code | Private — stored only on Autocoder servers, never exposed to the browser |
-| Restriction Method | By website domain (HTTP Referrer) |  |
-
-|  | Browser API Key | Server API Key |
-| :-- | :-- | :-- |
-| Purpose | Frontend map rendering: display, markers, interactions, address autocomplete | Backend data calls: routing, geocoding, distance calculation, place search |
-| Exposure | Public — visible in frontend page code | Private — stored only on Autocoder servers, never exposed to the browser |
 | Restriction Method | By website domain (HTTP Referrer) | By API type / IP address |
 | Environment | Accessible to frontend code | Server-side only |
 
@@ -50,6 +44,14 @@ Google Maps Platform bills per API, so enable only the ones your app actually us
 ### **Server-side APIs (for the Server Key)**
 
 Enable based on your app's features:
+
+| API Name | Purpose |
+| --- | --- |
+| Geocoding API | Address to coordinates, coordinates to address |
+| Routes API | Route planning, travel time, distance matrix |
+| Places API (New) | Place search, place details, hours, ratings |
+| Address Validation API | Address validation |
+|  |  |
 
 <table>
   <colgroup>
