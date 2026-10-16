@@ -113,7 +113,32 @@ When you mention AI in your generation request, the system automatically checks 
 
 To separate build-time operations from runtime AI calls, Autocoder uses two independent credit types that cannot be mixed:
 
-/
+<table>
+  <colgroup>
+    <col width="118" />
+    <col width="312" />
+    <col width="380" />
+  </colgroup>
+  <thead>
+    <tr>
+      <th>**Credit Type**</th>
+      <th>**Purpose**</th>
+      <th>**How It Is Deducted**</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Run Credits</td>
+      <td>All AI feature calls</td>
+      <td>Deducted per AI API call based on token usage</td>
+    </tr>
+    <tr>
+      <td>Build Credits</td>
+      <td>Project build, edit, and other operations</td>
+      <td>The original credit system; default type</td>
+    </tr>
+  </tbody>
+</table>
 
 | **Credit Type** | **Purpose** | **How It Is Deducted** |
 | :-- | :-- | :-- |
