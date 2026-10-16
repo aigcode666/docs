@@ -14,7 +14,7 @@ When you build a project in Autocoder, your code is stored and managed within th
 
 You don't need to know Git to use this feature. Set up the connection once, and your code syncs automatically. Git knowledge is only needed for advanced workflows such as branching, code reviews, or CI/CD.
 
-# **Feature overview ** 
+## **Feature overview ** 
 
 The Git repository connection feature currently supports the following capabilities:
 
@@ -61,9 +61,9 @@ The Git repository connection feature currently supports the following capabilit
   </tbody>
 </table>
 
-# **Getting started**
+## **Getting started**
 
-## **Prerequisites**
+### **Prerequisites**
 
 · You need an Autocoder paid plan (same entitlement as source code export).
 
@@ -71,7 +71,7 @@ The Git repository connection feature currently supports the following capabilit
 
 · One project can only connect to one Git platform at a time (GitHub or GitLab).
 
-## **Connect GitHub**
+### **Connect GitHub**
 
 1. In the project editor, click the "Code" button at the top.
 
@@ -89,11 +89,11 @@ The Git repository connection feature currently supports the following capabilit
 
 8. Once connected, the status shows "Synced to GitHub", and your project code is synced to your repository.
 
-## **Connect GitLab**
+### **Connect GitLab**
 
 The GitLab connection flow is essentially the same as GitHub: select "Connect GitLab" from the "Code" dropdown menu in the project editor, then follow the prompts to sign in, authorize, and create your repository.
 
-# **Sync status and actions**
+## **Sync status and actions**
 
 After connecting, you can view the current connection status and repository information in the Git status panel of your project.
 
@@ -113,9 +113,9 @@ Click the three-dot menu in the top-right corner to access the following actions
 
 · Download Code: Download the project code as a ZIP archive.
 
-# **Branch management**
+## **Branch management**
 
-## **Switch branches**
+### **Switch branches**
 
 In the Git status panel, you can switch between different branches using the dropdown menu. Branch names are searchable for quick navigation.
 
@@ -123,7 +123,7 @@ In the Git status panel, you can switch between different branches using the dro
 
 · Switching branches does not create a new project version; it only changes the currently active version state.
 
-## **Create a branch**
+### **Create a branch**
 
 Click "Create branch" in the branch dropdown to create a new Git branch based on the currently active project version.
 
@@ -131,11 +131,11 @@ Click "Create branch" in the branch dropdown to create a new Git branch based on
 
 · After creation, subsequent changes made in Autocoder are automatically pushed to the currently selected branch.
 
-## **Delete a branch**
+### **Delete a branch**
 
 You can delete branches that are no longer needed. Note: the currently active branch cannot be deleted.
 
-## **How sync works**
+### **How sync works**
 
 The current version operates in one-way sync mode:
 
@@ -145,9 +145,9 @@ The current version operates in one-way sync mode:
 
 · Switching project versions does not automatically switch Git branches.
 
-# **Project versions and Git branches**
+## **Project versions and Git branches**
 
-## **What is an active version?**
+### **What is an active version?**
 
 The active version is the version of your project that is currently in "active work" state. Project publishing, sharing, and Workspace display all use the active version. There is only one active version per project at a time.
 
@@ -159,7 +159,7 @@ The active version is the version of your project that is currently in "active w
 
 · v3 — Latest version (the version you are currently editing)
 
-## **Switch between historical versions**
+### **Switch between historical versions**
 
 In the project version history list, each historical version provides two actions:
 
@@ -167,7 +167,7 @@ In the project version history list, each historical version provides two action
 
 · Revert: Set this version as the active version. Requires a second confirmation click; once confirmed, this version becomes the new active version.
 
-## **How versions and branches relate**
+### **How versions and branches relate**
 
 After connecting Git, the version-to-branch mapping rules are as follows:
 
@@ -179,7 +179,7 @@ After connecting Git, the version-to-branch mapping rules are as follows:
 
 · Switch versions (Revert) → the Git branch does not change; the new version's code is automatically pushed to the current branch.
 
-# **Disconnecting**
+## **Disconnecting**
 
 If you want to disconnect your project from the Git repository:
 
@@ -197,7 +197,7 @@ If you want to disconnect your project from the Git repository:
 
 To switch a project to a different Git platform (e.g., from GitHub to GitLab), you must first disconnect the current connection, then connect to the new platform. One project can only connect to one Git platform at a time.
 
-# **Limitations**
+## **Limitations**
 
 <table>
   <colgroup>
@@ -234,28 +234,28 @@ To switch a project to a different Git platform (e.g., from GitHub to GitLab), y
   </tbody>
 </table>
 
-# **FAQ**
+## **FAQ**
 
-## **Do I need to know Git to use this?**
+### **Do I need to know Git to use this?**
 
 No. Set up the connection once and your code syncs automatically. Git knowledge is only needed for advanced workflows such as branching, code reviews, or CI/CD.
 
-## **I just want a copy of my code — do I need Git sync?**
+### **I just want a copy of my code — do I need Git sync?**
 
 No. You can still use "Download Code" to download your project as a ZIP archive. Git sync is for ongoing sync, code backup, and team collaboration.
 
-## **Can one project connect to both GitHub and GitLab?**
+### **Can one project connect to both GitHub and GitLab?**
 
 No. One project links to one repository on one platform at a time. To switch platforms, disconnect the current connection first.
 
-## **Does pushing to my repository update my live site?**
+### **Does pushing to my repository update my live site?**
 
 No. Git sync only pushes code to your repository — it never publishes or deploys. Your live site only changes when you publish from Autocoder.
 
-## **Will I lose my code after disconnecting?**
+### **Will I lose my code after disconnecting?**
 
 No. After disconnecting, both the repository and the code are fully preserved. The repository stays in your GitHub/GitLab account, and the project code stays in Autocoder.
 
-## **Will reconnecting link back to my original repository?**
+### **Will reconnecting link back to my original repository?**
 
 No. When you reconnect, the system creates a brand new repository. The original repository remains in your account but is no longer linked to the Autocoder project.
