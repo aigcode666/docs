@@ -122,13 +122,13 @@ Key format: starts with AIza, 39 characters long.
 
 The Browser Key is public by design — it will appear in your frontend code. **Domain restriction is the only security barrier for this key** — configure it before publishing.
 
-## **Steps**
+### **Steps**
 
 7. Still on the Credentials page, click Create credentials → API key again
 
 8. Once created, click Edit API key to configure restrictions
 
-## **Security Restrictions**
+### **Security Restrictions**
 
 **Application restrictions (required):**
 
@@ -154,7 +154,7 @@ Click Save and copy the key
 
 Key format: also starts with AIza, 39 characters long.
 
-# **Step 4: Configure in Autocoder**
+## **Step 4: Configure in Autocoder**
 
 Paste both keys into your Autocoder project settings:
 
@@ -170,9 +170,9 @@ Alternatively, you can update both keys at any time in the API Hub → Google Ma
 
 **Don't have keys yet?** Click Skip to generate the project framework first. Basic map display works without an API key — you can come back and configure it later when you need real-time routing, place search, or other advanced features.
 
-# **Security Best Practices**
+## **Security Best Practices**
 
-## **Server API Key**
+### **Server API Key**
 
 · Treat it like a password — never commit it to version control or share it publicly
 
@@ -180,7 +180,7 @@ Alternatively, you can update both keys at any time in the API Hub → Google Ma
 
 · Rotate periodically — regenerate and update every 6–12 months in Google Cloud
 
-## **Browser API Key**
+### **Browser API Key**
 
 · Being public is normal — it's expected to appear in frontend code
 
@@ -188,9 +188,9 @@ Alternatively, you can update both keys at any time in the API Hub → Google Ma
 
 · Set budget alerts — configure usage caps and billing alerts in Google Cloud to avoid surprise charges
 
-# **Troubleshooting**
+## **Troubleshooting**
 
-## **Map not loading / blank page**
+### **Map not loading / blank page**
 
 · Check that the Browser Key has the correct website domain restrictions
 
@@ -198,7 +198,7 @@ Alternatively, you can update both keys at any time in the API Hub → Google Ma
 
 · Check the browser console for RefererNotAllowedMapError — your domain whitelist is misconfigured
 
-## **Address search / routing failing**
+### **Address search / routing failing**
 
 · Verify the Server Key is correct and has the right API restrictions
 
@@ -208,6 +208,6 @@ Alternatively, you can update both keys at any time in the API Hub → Google Ma
 
 · Look for a REQUEST_DENIED error — usually a key restriction configuration issue
 
-## **"This project does not require an API key" message**
+### **"This project does not require an API key" message**
 
 This means your project only uses basic map display and doesn't need to call real-time data APIs. Both key fields will be greyed out — this is expected. If you later add features like route planning or place search, the system will prompt you to configure API keys.
