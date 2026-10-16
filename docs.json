@@ -30,10 +30,101 @@
           "sparkvibe",
           "workspace",
           "deploy-and-hosting",
+          "earn-credits",
+          "profile",
+          "security-and-privacy",
+          {
+            "group": "API Hub",
+            "pages": [
+              "connect-your-app-to-google-maps-platform",
+              "untitled-page",
+              "untitled-page-2",
+              "google-signup",
+              "payment",
+              "api-hub"
+            ]
+          },
+          "build",
+          "google-maps-generator",
+          "sparkvibe",
+          "workspace",
+          "deploy-and-hosting",
+          "earn-credits",
+          "profile",
+          "security-and-privacy",
+          {
+            "group": "API Hub",
+            "pages": [
+              "connect-your-app-to-google-maps-platform",
+              "untitled-page",
+              "untitled-page-2",
+              "api-hub",
+              "google-signup",
+              "payment"
+            ]
+          },
+          "build",
+          "google-maps-generator",
+          "sparkvibe",
+          "workspace",
+          "deploy-and-hosting",
+          "earn-credits",
+          "profile",
+          "security-and-privacy",
+          {
+            "group": "API Hub",
+            "pages": [
+              "connect-your-app-to-google-maps-platform",
+              "untitled-page",
+              "untitled-page-2",
+              "api-hub",
+              "google-signup"
+            ]
+          },
+          "build",
+          "google-maps-generator",
+          "sparkvibe",
+          "workspace",
+          "deploy-and-hosting",
+          "earn-credits",
+          "profile",
+          "security-and-privacy",
+          {
+            "group": "API Hub",
+            "pages": [
+              "connect-your-app-to-google-maps-platform",
+              "untitled-page",
+              "untitled-page-2",
+              "api-hub"
+            ]
+          },
+          "build",
+          "google-maps-generator",
+          "sparkvibe",
+          "workspace",
+          "deploy-and-hosting",
+          "earn-credits",
+          "profile",
+          "security-and-privacy",
+          {
+            "group": "API",
+            "pages": [
+              "connect-your-app-to-google-maps-platform",
+              "untitled-page",
+              "untitled-page-2",
+              "api-hub"
+            ]
+          },
+          "build",
+          "google-maps-generator",
+          "sparkvibe",
+          "workspace",
+          "deploy-and-hosting",
 		  "api-hub",
           "earn-credits",
           "profile",
-          "security-and-privacy"
+          "security-and-privacy",
+          ""
         ]
       },
       {
@@ -51,6 +142,9 @@
         "pages": [
           "changelog"
         ]
+      },
+      {
+        "tab": "Doc"
       }
     ]
   },

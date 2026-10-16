@@ -1,0 +1,185 @@
+---
+title: "Google Maps"
+---
+
+To integrate Google Maps Platform into your Autocoder project, you need to configure two types of API keys: **Browser API Key** and **Server API Key**. This guide explains the difference between the two and walks you through creating and restricting them properly in the Google Cloud Console.
+
+## **Why Do You Need Two API Keys?**
+
+Google Maps Platform APIs fall into two categories: those that run in the browser (loading maps) and those that run on the server (data calls). Using two separate keys lets you manage each independently — improving security and giving you granular control over usage and billing.
+
+| Purpose | Browser API Key | Server API Key |
+| --- | --- | --- |
+| Purpose | Frontend map rendering: display, markers, interactions, address autocomplete | Backend data calls: routing, geocoding, distance calculation, place search |
+| Exposure | Public — visible in frontend page code | Private — stored only on Autocoder servers, never exposed to the browser |
+| Restriction Method | By website domain (HTTP Referrer) | By API type / IP address |
+| Environment | Accessible to frontend code | Server-side only |
+
+**Core principle:** Treat your Server Key like a password — never expose it to the frontend. Your Browser Key is public by design, but must be restricted by domain to prevent unauthorized use.
+
+## **Quick Start**
+
+### **Prerequisites**
+
+Before creating your API keys, make sure you have:
+
+1. A Google Cloud project with billing enabled
+
+2. Permission to enable APIs and create API keys in that project
+
+3. Your app domains: the Autocoder preview URL and any custom domains
+
+## **Step 1: Enable the APIs You Need**
+
+Google Maps Platform bills per API, so enable only the ones your app actually uses. In the Google Cloud Console, go to APIs & Services → Library and enable the following:
+
+### **Browser-side APIs (for the Browser Key)**
+
+· Maps JavaScript API — core interactive map loader (required)
+
+· Maps Embed API — embedded maps (if using iframe embeds)
+
+· Maps Static API — static map images (if generating static map screenshots)
+
+### **Server-side APIs (for the Server Key)**
+
+Enable based on your app's features:
+
+| API Name | Purpose |
+| --- | --- |
+| Geocoding API | Address to coordinates, coordinates to address |
+| Routes API | Route planning, travel time, distance matrix |
+| Places API (New) | Place search, place details, hours, ratings |
+| Address Validation API | Address validation |
+| Time Zone API | Time zone lookup |
+| Elevation API | Elevation data |
+
+**Note:** Google has deprecated the legacy Directions API, Distance Matrix API, and original Places API. Autocoder uses the new Routes API and Places API (New) — do not enable the legacy versions.
+
+## **Step 2: Create the Server API Key**
+
+The Server Key is used by Autocoder's backend to call all server-side Maps APIs. This key must be strictly restricted. **Do NOT add a website restriction** — server-side requests carry no browser referrer, so a referrer-restricted key will reject every call.
+
+### **Steps**
+
+4. Open the Google Cloud Console → APIs & Services → Credentials
+
+5. Click Create credentials → API key
+
+6. Once created, click Edit API key to configure restrictions
+
+### **Security Restrictions**
+
+**API restrictions (required):**
+
+· Select Restrict key
+
+· In the dropdown, check only the server-side APIs you enabled in Step 1 (Geocoding, Routes, Places, etc.)
+
+· Do NOT check Maps JavaScript API, Maps Embed API, or Maps Static API — those belong to the Browser Key
+
+**Application restrictions (recommended):**
+
+· Leave None, or select IP addresses and add Autocoder's server egress IP ranges
+
+· Never select Websites for this key — it will break all server-side calls
+
+Click Save and copy the key
+
+Key format: starts with AIza, 39 characters long.
+
+## **Step 3: Create the Browser API Key**
+
+The Browser Key is public by design — it will appear in your frontend code. **Domain restriction is the only security barrier for this key** — configure it before publishing.
+
+### **Steps**
+
+7. Still on the Credentials page, click Create credentials → API key again
+
+8. Once created, click Edit API key to configure restrictions
+
+### **Security Restrictions**
+
+**Application restrictions (required):**
+
+· Select Websites
+
+· Add every domain your app is served on:
+
+· Autocoder preview domain: [https://your-project.autocoder.store/\*](https://your-project.autocoder.app/*)
+
+· Custom domain (if any): [https://yourdomain.com/\*](https://yourdomain.com/*) and [https://www.yourdomain.com/\*](https://www.yourdomain.com/*)
+
+**API restrictions (required):**
+
+· Select Restrict key
+
+· Check only Maps JavaScript API
+
+· Also check Maps Embed API and Maps Static API if you enabled them in Step 1
+
+· Do NOT check Geocoding, Routes, Places, or other server-side APIs — Autocoder calls them through the backend with the Server Key. Calling them from the browser will result in a REQUEST_DENIED error
+
+Click Save and copy the key
+
+Key format: also starts with AIza, 39 characters long.
+
+## **Step 4: Configure in Autocoder**
+
+Paste both keys into your Autocoder project settings:
+
+9. Describe your map feature in the project chat — Autocoder will pop up the Enter API keys dialog
+
+10. Paste the Server Key from Step 2 into the Server API Key field
+
+11. Paste the Browser Key from Step 3 into the Browser API Key field
+
+12. Click “Save” 
+
+Alternatively, you can update both keys at any time in the API Hub → Google Maps page.
+
+**Don't have keys yet?** Click Skip to generate the project framework first. Basic map display works without an API key — you can come back and configure it later when you need real-time routing, place search, or other advanced features.
+
+## **Security Best Practices**
+
+### **Server API Key**
+
+· Treat it like a password — never commit it to version control or share it publicly
+
+· Restrict by API — only check the server-side APIs you actually use, to limit impact if the key leaks
+
+· Rotate periodically — regenerate and update every 6–12 months in Google Cloud
+
+### **Browser API Key**
+
+· Being public is normal — it's expected to appear in frontend code
+
+· Always set a domain whitelist — this is the only way to prevent others from using your key and running up your bill
+
+· Set budget alerts — configure usage caps and billing alerts in Google Cloud to avoid surprise charges
+
+## **Troubleshooting**
+
+### **Map not loading / blank page**
+
+· Check that the Browser Key has the correct website domain restrictions
+
+· Confirm Maps JavaScript API is enabled in Google Cloud
+
+· Check the browser console for RefererNotAllowedMapError — your domain whitelist is misconfigured
+
+### **Address search / routing failing**
+
+· Verify the Server Key is correct and has the right API restrictions
+
+· Confirm Routes API / Places API / Geocoding API are enabled
+
+· Confirm the Server Key does NOT have website restrictions set
+
+· Look for a REQUEST_DENIED error — usually a key restriction configuration issue
+
+### **"This project does not require an API key" message**
+
+This means your project only uses basic map display and doesn't need to call real-time data APIs. Both key fields will be greyed out — this is expected. If you later add features like route planning or place search, the system will prompt you to configure API keys.
+
+![Image](/images/image-90.png "Image")
