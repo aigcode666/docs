@@ -158,28 +158,21 @@ Alternatively, you can update both keys at any time in the API Hub → Google Ma
 
 · Set budget alerts — configure usage caps and billing alerts in Google Cloud to avoid surprise charges
 
-## **Troubleshooting**
+## **FAQ** 
 
-### **Map not loading / blank page**
+**Q: Why is the map not loading or showing a blank page?**<br />A: This issue is usually related to your **Browser Key** configuration. Please check the following:
 
-· Check that the Browser Key has the correct website domain restrictions
+- Ensure the Browser Key has the correct website domain restrictions applied.
+- Confirm that the **Maps JavaScript API** is enabled in your Google Cloud Console.
+- Check your browser console for a `RefererNotAllowedMapError`, which indicates your domain whitelist is misconfigured.
 
-· Confirm Maps JavaScript API is enabled in Google Cloud
+### **Q: Why are address search or routing features failing?**<br />A: This typically involves your **Server Key** or the status of specific APIs. Please verify:
 
-· Check the browser console for RefererNotAllowedMapError — your domain whitelist is misconfigured
+- The Server Key is correct and has the appropriate API restrictions set.
+- Confirm that the **Routes API**, **Places API**, and/or **Geocoding API** are enabled.
+- Ensure the Server Key does **NOT** have website domain restrictions (as it is intended for server-side use).
+- Look for a `REQUEST_DENIED` error, which usually points to a key restriction configuration issue.
 
-### **Address search / routing failing**
-
-· Verify the Server Key is correct and has the right API restrictions
-
-· Confirm Routes API / Places API / Geocoding API are enabled
-
-· Confirm the Server Key does NOT have website restrictions set
-
-· Look for a REQUEST_DENIED error — usually a key restriction configuration issue
-
-### **"This project does not require an API key" message**
-
-This means your project only uses basic map display and doesn't need to call real-time data APIs. Both key fields will be greyed out — this is expected. If you later add features like route planning or place search, the system will prompt you to configure API keys.
+**Q: Why do I see the message "This project does not require an API key"?**<br />A: This is expected behavior. It means your project currently only uses basic map display features and does not need to call real-time data APIs. Both key fields will appear greyed out. If you add features like route planning or place search later, the system will prompt you to configure your API keys.
 
 ![Image](/images/image-90.png "Image")
