@@ -2,33 +2,33 @@
 title: "AI Integration"
 ---
 
-Autocoder's built-in AI connector lets you add intelligent features to your app without building an AI backend, managing API keys, or wiring up model calls yourself. Just describe what you want in natural language, and Autocoder sets up the model, backend, and billing for you.  
+Autocoder's built-in AI connector lets you add intelligent features to your app without building an AI backend, managing API keys, or wiring up model calls yourself. Just describe what you want in natural language, and Autocoder sets up the model, backend, and billing for you. 
 
-Typical AI features you can add to your project include:        
+Typical AI features you can add to your project include:       
 
-· Chatbots and in-app conversational assistants  
+· Chatbots and in-app conversational assistants 
 
-· Generate images from text descriptions  
+· Generate images from text descriptions 
 
-· Automatic in-site information search  
+· Automatic in-site information search 
 
-· Text generation (e.g., write product descriptions from a single sentence)  
+· Text generation (e.g., write product descriptions from a single sentence) 
 
-· Upload files or images and generate content from them  
+· Upload files or images and generate content from them 
 
 ## Enabling AI in Your Project       
 
-Enabling AI features takes just a few steps. You can enable and set it up through the API Hub or by sending a request in the chat flow.  
+Enabling AI features takes just a few steps. You can enable and set it up through the API Hub or by sending a request in the chat flow. 
 
 ### Two Connection Modes       
 
-Autocoder offers two ways to connect AI to your project:  
+Autocoder offers two ways to connect AI to your project: 
 
 #### Managed by AutoCoder       
 
-· Default mode — Autocoder provides the model and API key; no application required  
+· Default mode — Autocoder provides the model and API key; no application required 
 
-· All API usage is charged in run credits based on token usage  
+· All API usage is charged in run credits based on token usage 
 
 · Choose from available models via the dropdown selector
 
@@ -48,24 +48,20 @@ Autocoder offers two ways to connect AI to your project: 
 
 ### How to Enable    
 
-You can connect AI to your project in either of two ways:  
+You can connect AI to your project in either of two ways: 
 
 #### Option 1: Describe Your Needs in Chat     
 
-This is the fastest way. You don't need to visit a settings page first — just describe the AI feature you want in the project chat, in plain language.  
+This is the fastest way. You don't need to visit a settings page first — just describe the AI feature you want in the project chat, in plain language. 
 
 #### Option 2: Configure Manually from the AI Management Page    
 
 If you prefer to set up the connection mode and model first before adding AI features, follow these steps:
 
 1. Open the AI management toggle in the project editor (initially only the toggle is shown).
-
 2. Choose your connection mode: Managed by AutoCoder or Your own API Key.
-
 3. If using managed mode, pick a model from the dropdown. If using your own key, enter your API Key and Base URL, then fetch the model list.
-
 4. Configure memory storage and (optionally) a monthly credit limit.
-
 5. Once enabled, describe the AI feature you want in chat and Autocoder builds it for you.
 
 ## Memory Storage     
@@ -99,7 +95,7 @@ When configuring AI conversation features in your project, you can choose how ch
   </tbody>
 </table>
 
-When you mention AI in your generation request, the system automatically checks for explicit AI features after the lightweight generation step and before the requirements list is generated, and prompts you to confirm the memory storage mode.  
+When you mention AI in your generation request, the system automatically checks for explicit AI features after the lightweight generation step and before the requirements list is generated, and prompts you to confirm the memory storage mode. 
 
 <img
   src="/images/image-101.png"
@@ -108,7 +104,7 @@ When you mention AI in your generation request, the system automatically checks 
   style={{ width:"32%" }}
 />
 
-## **How It Works   ** 
+## How It Works   
 
 · Autocoder automatically generates and manages API credentials for your project — no manual key creation or maintenance.
 
@@ -118,7 +114,7 @@ When you mention AI in your generation request, the system automatically checks 
 
 · If your project is shared to Spark Vibe, AI calls are not executed for other visitors.
 
-## **Run Credits and Billing ** 
+## \*\*Run Credits and Billing 
 
 To separate build-time operations from runtime AI calls, Autocoder uses two independent credit types that cannot be mixed:
 
@@ -128,9 +124,14 @@ To separate build-time operations from runtime AI calls, Autocoder uses two inde
   </colgroup>
   <thead>
     <tr>
-      <th>**Credit Type **</th>
+      <th>\*\*Credit Type \*\*</th>
     </tr>
   </thead>
+  <tbody>
+    <tr>
+      <td></td>
+    </tr>
+  </tbody>
 </table>
 
 <table>
@@ -141,9 +142,9 @@ To separate build-time operations from runtime AI calls, Autocoder uses two inde
   </colgroup>
   <thead>
     <tr>
-      <th>** **</th>
-      <th>**Purpose **</th>
-      <th>**How It Is Deducted **</th>
+      <th></th>
+      <th>Purpose</th>
+      <th>How It Is Deducted</th>
     </tr>
   </thead>
   <tbody>
@@ -160,7 +161,7 @@ To separate build-time operations from runtime AI calls, Autocoder uses two inde
   </tbody>
 </table>
 
-### **Monthly Credit Limit   ** 
+### Monthly Credit Limit   
 
 You can set a monthly run credit limit for each project. The default is "No limit." Once enabled, enter a specific numeric value. When the limit is reached:
 
@@ -168,11 +169,11 @@ You can set a monthly run credit limit for each project. The default is "No limi
 
 · A notice such as "Current model unavailable" appears within the deployed project
 
-## **Monitoring AI Usage ** 
+## Monitoring AI Usage 
 
 Autocoder provides a detailed AI analytics dashboard for each project. Access it from the project list, the sidebar recent projects, the homepage recent projects, or the analytics icon in the project editor.
 
-### **Key Metrics **
+### Key Metrics 
 
 The Analytics page includes a dedicated AI tab. Filter by time range:
 
